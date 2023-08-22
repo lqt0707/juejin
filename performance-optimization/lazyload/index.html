@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Lazy-Load</title>
+    <style>
+      .img {
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+      }
+      .pic {
+        // 必要的img样式
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="img">
+        // 注意我们并没有为它引入真实的src
+        <img class="pic" alt="加载中" data-src="./images/1.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/2.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/3.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/4.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/5.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/6.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/7.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/8.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/9.jpeg" />
+      </div>
+      <div class="img">
+        <img class="pic" alt="加载中" data-src="./images/10.jpeg" />
+      </div>
+    </div>
+    <script>
+      // 获取所有的图片标签
+      const imgs = document.getElementsByTagName("img");
+      // 获取可视区域的高度
+      const viewHeight =
+        window.innerHeight || document.documentElement.clientHeight;
+      // num用于统计当前显示到了哪一张照片，避免每次都从第一张照片开始检查是否漏出
+      let num = 0;
+      function lazyLoad() {
+        for (let i = num; i < imgs.length; i++) {
+          // 用可视区域高度减去元素顶部距离可视区域顶部的高度
+          let distance = viewHeight - imgs[i].getBoundingClientRect().top;
+          console.log("viewHeight---", viewHeight);
+          console.log(
+            "imgs[i].getBoundingClientRect().top---",
+            i,
+            imgs[i].getBoundingClientRect().top
+          );
+          // 如果可视区域高度大于等于元素顶部距离可视区域顶部的高度，说明元素露出
+          if (distance >= 0) {
+            // 给元素写入真实src，展示图片
+            imgs[i].src = imgs[i].getAttribute("data-src");
+            // 前i张图片已经加载完成，下次从第i+1张开始检查是否露出
+            num = i + 1;
+          }
+        }
+      }
+      // fn使我们需要包装的回调函数，interval是时间间隔的值
+      function throttle(fn, interval) {
+        // last为上一次触发回调的时间
+        let last = 0;
+
+        // 将throttle处理结果当做函数返回
+        return function () {
+          // 保留调用时的this上下文
+          let context = this;
+          // 保留调用时传入的参数
+          let args = arguments;
+          // 记录本次回调触发的时间
+          let now = +new Date();
+
+          //判断上次触发时间和本次触发时间差是否校服时间间隔的阈值
+          if (now - last >= interval) {
+            // 如果大于，则执行回调
+            last = now;
+            fn.apply(this, args);
+          }
+        };
+      }
+      // 用throttle来包装scroll的回调
+      const better_scroll = throttle(() => {
+        console.log("触发了滚动事件");
+        lazyLoad();
+      }, 100);
+
+      window.addEventListener("load", better_scroll, false);
+      // 监听scroll的操作
+      window.addEventListener("scroll", better_scroll, false);
+    </script>
+  </body>
+</html>
