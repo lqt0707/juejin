@@ -1,8 +1,6 @@
 import { DependencyList, useRef } from "react";
 
-/**
- * 强化 useMemo 和 useRef，用法与 useMemo 一样，一般用于性能优化。
- */
+
 
 // 比较依赖项是否相等
 const depsAreSame = (
@@ -19,7 +17,9 @@ const depsAreSame = (
   }
   return true;
 };
-
+/**
+ * 强化 useMemo 和 useRef，用法与 useMemo 一样，一般用于性能优化。
+ */
 const useCreation = <T>(fn: () => T, deps: DependencyList) => {
   const { current } = useRef({
     deps,

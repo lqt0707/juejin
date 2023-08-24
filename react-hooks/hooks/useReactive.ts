@@ -31,7 +31,11 @@ const useReactive = <T extends Record<string, any>>(initialState: T) => {
   const update = useUpdate();
 
   const state = useCreation(() => {
-    return observer();
+    return observer(ref.current, () => {
+      update();
+    });
   }, []);
+
+  return state;
 };
 export default useReactive;
