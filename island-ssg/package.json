@@ -1,0 +1,22 @@
+{
+  "name": "island-ssg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "island": "bin/island.js"
+  },
+  "scripts": {
+    "start": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^20.9.4",
+    "typescript": "^5.3.2"
+  },
+  "dependencies": {
+    "cac": "^6.7.14"
+  }
+}
