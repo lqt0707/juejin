@@ -1,11 +1,19 @@
 {
   "compilerOptions": {
+    "module": "ESNext",
     "outDir": "dist",
-    "target": "ESNext" /* Set the JavaScript language version for emitted JavaScript and include compatible library declarations. */,
-    "module": "commonjs" /* Specify what module code is generated. */,
-    "rootDir": "src" /* Specify the root folder within your source files. */,
+    "rootDir": "src",
+    "target": "ESNext",
     "jsx": "react-jsx",
-    "esModuleInterop": true
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "baseUrl": "src"
   },
-  "exclude": ["tsup.config.ts"]
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": [
+    "e2e/**/*.ts",
+    "playwright.config.ts",
+    "e2e/index.test.ts",
+    "dist"
+  ]
 }
