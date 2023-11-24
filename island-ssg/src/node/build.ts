@@ -3,14 +3,16 @@ import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from "./constants";
 import pluginReact from "@vitejs/plugin-react";
 import type { RollupOutput } from "rollup";
 import { join } from "path";
-import * as fs from "fs-extra";
+import fs from "fs-extra";
+import ora from "ora";
+import { pathToFileURL } from "url";
 
 export async function build(root: string = process.cwd()) {
   // 1. bundle - client 端 + server 端
   const [clientBundle] = await bundle(root);
   // 2. 引入 server-entry 模块
   const serverEntryPath = join(root, ".temp", "ssr-entry.js");
-  const { render } = require(serverEntryPath);
+  const { render } = await import(pathToFileURL(serverEntryPath).toString());
   // 3. 服务端渲染，产出 HTML
   await renderPage(render, root, clientBundle);
 }
@@ -36,7 +38,7 @@ export async function renderPage(
     </head>
     <body>
       <div id="root">${appHtml}</div>
-      <script type="module" src="./${clientChunk?.fileName}"></script>
+      <script type="module" src="/${clientChunk?.fileName}"></script>
     </body>
   </html>`.trim();
   await fs.ensureDir(join(root, "build"));
@@ -45,6 +47,9 @@ export async function renderPage(
 }
 
 export async function bundle(root: string) {
+  // 调用ora
+  const spinner = ora();
+
   const resolveViteConfig = (isServer: boolean): InlineConfig => ({
     mode: "production",
     root,
