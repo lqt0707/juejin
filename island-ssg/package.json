@@ -54,13 +54,19 @@
     "vitest": "^0.25.2"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.2",
     "@vitejs/plugin-react": "^2.2.0",
     "cac": "^6.7.14",
+    "fast-glob": "^3.2.12",
     "fs-extra": "^10.1.0",
     "ora": "^6.1.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "6.4.3",
+    "rehype-stringify": "^10.0.0",
+    "remark-parse": "^11.0.0",
+    "remark-rehype": "^11.0.0",
+    "unified": "^11.0.4",
     "vite": "3.1.4"
   }
 }
