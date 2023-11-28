@@ -5,7 +5,6 @@ import remarkRehype from 'remark-rehype';
 import rehypeStringify from 'rehype-stringify';
 
 describe('Markdown compile cases', () => {
-  // 初始化processor
   const processor = unified()
     .use(remarkParse)
     .use(remarkRehype)
