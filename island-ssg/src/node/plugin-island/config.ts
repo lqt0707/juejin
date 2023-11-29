@@ -1,7 +1,7 @@
-import { join, relative } from 'path';
+import { relative, join } from 'path';
 import { Plugin } from 'vite';
 import { SiteConfig } from 'shared/types/index';
-import { PACKAGE_ROOT } from 'node/constants';
+import { PACKAGE_ROOT } from '../../node/constants';
 
 const SITE_DATA_ID = 'island:site-data';
 
@@ -12,13 +12,17 @@ export function pluginConfig(
   // let server: ViteDevServer | null = null;
   return {
     name: 'island:config',
-    // 新增插件钩子
     config() {
       return {
         root: PACKAGE_ROOT,
         resolve: {
           alias: {
             '@runtime': join(PACKAGE_ROOT, 'src', 'runtime', 'index.ts')
+          }
+        },
+        css: {
+          modules: {
+            localsConvention: 'camelCaseOnly'
           }
         }
       };
@@ -52,9 +56,8 @@ export function pluginConfig(
         // ❌ 没有作用，因为并没有进行 Island 框架配置的重新读取
         // 2. 手动调用 dev.ts 中的 createServer
         // 然后每次 import 新的产物
-        // ✅ 可行import { PACKAGE_ROOT } from '../constants/index';
-
-        await restartServer();
+        // ✅ 可行
+        await restartServer!();
       }
     }
   };
