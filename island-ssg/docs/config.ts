@@ -1,4 +1,5 @@
 export default {
   title: 1,
-  description: 'test'
+  description: 'test',
+  isServer: false
 };

@@ -4,9 +4,7 @@ import { CLIENT_ENTRY_PATH, SERVER_ENTRY_PATH } from './constants';
 import path, { dirname, join } from 'path';
 import fs from 'fs-extra';
 // import ora from 'ora';
-import { pluginConfig } from './plugin-island/config';
 import { SiteConfig } from 'shared/types';
-import pluginReact from '@vitejs/plugin-react';
 import { createVitePlugins } from './vitePlugins';
 import { Route } from './plugin-routes';
 
@@ -48,14 +46,13 @@ export async function bundle(root: string, config: SiteConfig) {
   }
 }
 
-export async function renderPage(
+export async function renderPages(
   render: (url: string) => string,
   routes: Route[],
   root: string,
   clientBundle: RollupOutput
 ) {
   console.log('Rendering page in server side...');
-
   const clientChunk = clientBundle.output.find(
     (chunk) => chunk.type === 'chunk' && chunk.isEntry
   );
@@ -94,7 +91,7 @@ export async function build(root: string = process.cwd(), config: SiteConfig) {
   const { render, routes } = await import(serverEntryPath);
   // 3. 服务端渲染，产出 HTML
   try {
-    await renderPage(render, routes, root, clientBundle);
+    await renderPages(render, routes, root, clientBundle);
   } catch (e) {
     console.log('Render page error.\n', e);
   }
