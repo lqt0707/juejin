@@ -18,14 +18,19 @@ export const rehypePluginPreWrapper: Plugin<[], Root> = () => {
         // 2. 解析出代码的语言名称
         const lang = codeClassName.split('-')[1];
 
-        codeNode.properties.className = '';
+        // codeNode.properties.className = '';
         // 3. 变换HTML ast
         const cloneNode: Element = {
           type: 'element',
           tagName: 'pre',
           children: node.children,
           data: {
-            isVisited: true
+            isVisited: true,
+            position: {
+              opening: undefined,
+              closing: undefined,
+              properties: undefined
+            }
           },
           properties: {}
         };
