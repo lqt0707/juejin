@@ -1,7 +1,9 @@
-import { relative, join } from 'path';
+import path, { relative, join } from 'path';
 import { Plugin } from 'vite';
 import { SiteConfig } from 'shared/types/index';
 import { PACKAGE_ROOT } from '../../node/constants';
+import fs from 'fs-extra';
+import sirv from 'sirv';
 
 const SITE_DATA_ID = 'island:site-data';
 
@@ -12,6 +14,12 @@ export function pluginConfig(
   // let server: ViteDevServer | null = null;
   return {
     name: 'island:config',
+    configureServer(server) {
+      const publicDir = path.join(config.root, 'public');
+      if (fs.pathExistsSync(publicDir)) {
+        server.middlewares.use(sirv(publicDir));
+      }
+    },
     config() {
       return {
         root: PACKAGE_ROOT,

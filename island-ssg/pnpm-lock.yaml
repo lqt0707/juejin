@@ -59,6 +59,9 @@ dependencies:
   shiki:
     specifier: ^0.11.1
     version: 0.11.1
+  sirv:
+    specifier: ^2.0.3
+    version: 2.0.3
   unocss:
     specifier: ^0.57.7
     version: 0.57.7(postcss@8.4.31)(rollup@3.2.3)(vite@3.1.4)
@@ -672,7 +675,7 @@ packages:
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
       resolve-from: 5.0.0
-      ts-node: 10.9.1(@types/node@18.11.7)(typescript@4.8.4)
+      ts-node: 10.9.1(@types/node@20.5.1)(typescript@4.8.4)
       typescript: 4.8.4
     transitivePeerDependencies:
       - '@swc/core'
@@ -2319,7 +2322,7 @@ packages:
     dependencies:
       '@types/node': 20.5.1
       cosmiconfig: 8.3.6(typescript@4.8.4)
-      ts-node: 10.9.1(@types/node@18.11.7)(typescript@4.8.4)
+      ts-node: 10.9.1(@types/node@20.5.1)(typescript@4.8.4)
       typescript: 4.8.4
     dev: true
 
@@ -6094,6 +6097,37 @@ packages:
       '@tsconfig/node14': 1.0.3
       '@tsconfig/node16': 1.0.4
       '@types/node': 18.11.7
+      acorn: 8.8.1
+      acorn-walk: 8.3.0
+      arg: 4.1.3
+      create-require: 1.1.1
+      diff: 4.0.2
+      make-error: 1.3.6
+      typescript: 4.8.4
+      v8-compile-cache-lib: 3.0.1
+      yn: 3.1.1
+    dev: true
+
+  /ts-node@10.9.1(@types/node@20.5.1)(typescript@4.8.4):
+    resolution: {integrity: sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw==}
+    hasBin: true
+    peerDependencies:
+      '@swc/core': '>=1.2.50'
+      '@swc/wasm': '>=1.2.50'
+      '@types/node': '*'
+      typescript: '>=2.7'
+    peerDependenciesMeta:
+      '@swc/core':
+        optional: true
+      '@swc/wasm':
+        optional: true
+    dependencies:
+      '@cspotcode/source-map-support': 0.8.1
+      '@tsconfig/node10': 1.0.9
+      '@tsconfig/node12': 1.0.11
+      '@tsconfig/node14': 1.0.3
+      '@tsconfig/node16': 1.0.4
+      '@types/node': 20.5.1
       acorn: 8.8.1
       acorn-walk: 8.3.0
       arg: 4.1.3
