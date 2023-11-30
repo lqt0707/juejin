@@ -22,6 +22,8 @@ interface ChildNode {
 export const remarkPluginToc: Plugin<[], Root> = () => {
   return (tree) => {
     const toc: TocItem[] = [];
+    // 每次编译时都重新进行实例的初始化
+    const slugger = new Slugger();
     visit(tree, 'heading', (node) => {
       if (!node.depth || !node.children) {
         return;
