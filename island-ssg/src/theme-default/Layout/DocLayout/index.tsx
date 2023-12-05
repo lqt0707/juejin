@@ -7,7 +7,6 @@ import { Aside } from '../../components/Aside/index';
 
 export function DocLayout() {
   const { siteData, toc } = usePageData();
-  console.log('toc', toc);
 
   const sidebarData = siteData.themeConfig?.sidebar || {};
   const { pathname } = useLocation();
@@ -30,7 +29,7 @@ export function DocLayout() {
           <DocFooter />
         </div>
         <div className={styles.asideContainer}>
-          <Aside headers={toc} />
+          <Aside headers={toc} __island />
         </div>
       </div>
     </div>

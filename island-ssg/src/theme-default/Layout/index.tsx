@@ -10,7 +10,6 @@ import { DocLayout } from './DocLayout';
 export function Layout() {
   const pageData = usePageData();
   const { pageType } = pageData;
-  console.log('pageType----', pageType);
 
   const getContent = () => {
     if (pageType === 'home') {
