@@ -3,6 +3,7 @@ import { App, initPageData } from './app';
 import { BrowserRouter } from 'react-router-dom';
 import { DataContext } from './hooks';
 import { ComponentType } from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 
 declare global {
   interface Window {
@@ -21,11 +22,14 @@ async function renderInBrowser() {
     const pageData = await initPageData(location.pathname);
 
     createRoot(containerEl).render(
-      <DataContext.Provider value={pageData}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
-      </DataContext.Provider>
+      // 增加 HelmetProvider 的包裹
+      <HelmetProvider>
+        <DataContext.Provider value={pageData}>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </DataContext.Provider>
+      </HelmetProvider>
     );
   } else {
     // 生产环境下的partial hydration
