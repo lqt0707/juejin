@@ -7,3 +7,4 @@ dist
 __snapshots__
 /docs/.temp
 .DS_Store
+vendors
