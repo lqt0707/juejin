@@ -1,9 +1,9 @@
-import path, { relative, join } from 'path';
+import { relative, join } from 'path';
 import { Plugin } from 'vite';
 import { SiteConfig } from 'shared/types/index';
 import { PACKAGE_ROOT } from '../../node/constants';
-import fs from 'fs-extra';
 import sirv from 'sirv';
+import fs from 'fs-extra';
 
 const SITE_DATA_ID = 'island:site-data';
 
@@ -14,12 +14,6 @@ export function pluginConfig(
   // let server: ViteDevServer | null = null;
   return {
     name: 'island:config',
-    configureServer(server) {
-      const publicDir = path.join(config.root, 'public');
-      if (fs.pathExistsSync(publicDir)) {
-        server.middlewares.use(sirv(publicDir));
-      }
-    },
     config() {
       return {
         root: PACKAGE_ROOT,
@@ -66,6 +60,12 @@ export function pluginConfig(
         // 然后每次 import 新的产物
         // ✅ 可行
         await restartServer!();
+      }
+    },
+    configureServer(server) {
+      const publicDir = join(config.root, 'public');
+      if (fs.existsSync(publicDir)) {
+        server.middlewares.use(sirv(publicDir));
       }
     }
   };
