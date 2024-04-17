@@ -1,0 +1,5 @@
+<view>
+  <view>页面B</view>
+  <button bind:tap="jump">跳转页面A</button>
+  <bottom-cart pageType="页面B"></bottom-cart>
+</view>

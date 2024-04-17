@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/pageB/index",
+    "pages/pageA/index",
     "pages/index/index",
     "pages/logs/logs"
   ],

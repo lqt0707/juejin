@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "bottom-cart": "../pageA/component/bottom-cart/index"
+  }
+}

@@ -77,7 +77,7 @@ class EventDataCenter {
  * @returns
  */
 export function createEventDataCenter() {
-  if (dataCenter) {
+  if (!dataCenter) {
     dataCenter = new EventDataCenter();
   }
   const currentPageId = dataCenter.initSubscription();
