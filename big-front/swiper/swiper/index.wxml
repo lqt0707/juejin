@@ -1,0 +1,5 @@
+<view class="swiper-container {{ directionClass }}" style="{{ style }}">
+    <view class="swiper-wrapper" bindtouchstart="touchstart" bindtouchend="touchend" bindtouchmove="touchmove" animation="{{ animationData }}">
+        <slot />
+    </view>
+</view>
