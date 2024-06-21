@@ -1,0 +1,21 @@
+/* 
+         @auth: qqx
+         @email: 353087890@qq.com 
+         */
+#app {
+  width: 100%;
+  height: 100vh;
+}
+.qqx-custom-container {
+  margin: 0px;
+  padding: 10px;
+  background-color: #FFFFFF;
+}
+.qqx-custom-title {
+  font-size: 16px;
+  color: red;
+}
+.qqx-new-selector {
+  padding: 5px;
+  border: 1px solid black;
+}
