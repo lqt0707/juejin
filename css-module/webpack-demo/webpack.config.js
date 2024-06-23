@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
+// 引入 UnoCSS 依赖
+const UnoCSS = require("@unocss/webpack").default;
+
 module.exports = {
   mode: "production",
   entry: "./src/index.js",
@@ -19,8 +22,8 @@ module.exports = {
       {
         test: /.(scss|sass)$/,
         use: [
-          //   MiniCssExtractPlugin.loader,
-          //   "css-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
           "postcss-loader",
           "sass-loader",
         ],
@@ -50,5 +53,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "index.html",
     }),
+    // 配置 UnoCSS 插件
+    UnoCSS(),
   ],
 };

@@ -8,6 +8,12 @@ importers:
 
   .:
     devDependencies:
+      '@unocss/preset-uno':
+        specifier: ^0.61.0
+        version: 0.61.0
+      '@unocss/webpack':
+        specifier: ^0.61.0
+        version: 0.61.0(webpack@5.92.1(webpack-cli@5.1.4))
       autoprefixer:
         specifier: ^10.4.19
         version: 10.4.19(postcss@8.4.38)
@@ -59,6 +65,13 @@ packages:
   '@adobe/css-tools@4.3.3':
     resolution: {integrity: sha512-rE0Pygv0sEZ4vBWHlAgJLGDU7Pm8xoO6p3wsEceb7GYAjScrOHpEo8KK/eVkAcnSM+slAEtXjA2JpdjLp4fJQQ==}
 
+  '@ampproject/remapping@2.3.0':
+    resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
+    engines: {node: '>=6.0.0'}
+
+  '@antfu/utils@0.7.8':
+    resolution: {integrity: sha512-rWQkqXRESdjXtc+7NRfK9lASQjpXJu1ayp7qi1d23zZorY+wBHVLHHoVcMsEnkqEBWTFqbztO7/QdJFzyEcLTg==}
+
   '@babel/code-frame@7.24.7':
     resolution: {integrity: sha512-BcYH1CVJBO9tvyIZ2jVeXgSIMvGZ2FDRvDdOIVQyuklNKSsx+eppDEBq/g47Ayw+RqNFE+URvOShmf+f/qwAlA==}
     engines: {node: '>=6.9.0'}
@@ -108,6 +121,15 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
+  '@rollup/pluginutils@5.1.0':
+    resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
+    engines: {node: '>=14.0.0'}
+    peerDependencies:
+      rollup: ^1.20.0||^2.0.0||^3.0.0||^4.0.0
+    peerDependenciesMeta:
+      rollup:
+        optional: true
+
   '@types/eslint-scope@3.7.7':
     resolution: {integrity: sha512-MzMFlSLBqNF2gcHWO0G1vP/YQyfvrxZ0bF+u7mzUdZ1/xK4A4sru+nraZz5i3iEIk1l1uyicaDVTB4QbbEkAYg==}
 
@@ -125,6 +147,34 @@ packages:
 
   '@types/node@20.14.7':
     resolution: {integrity: sha512-uTr2m2IbJJucF3KUxgnGOZvYbN0QgkGyWxG6973HCpMYFy2KfcgYuIwkJQMQkt1VbBMlvWRbpshFTLxnxCZjKQ==}
+
+  '@unocss/config@0.61.0':
+    resolution: {integrity: sha512-k8uV4n8eMti4S6BFeAkc9QBXJefDIlPyOWrdKykUMOHLIWVAIS53JixW9FJNgJRw0RVI6B7UR+rOznWwKpORPA==}
+    engines: {node: '>=14'}
+
+  '@unocss/core@0.61.0':
+    resolution: {integrity: sha512-Y/Ly3LPIAzOBlWCdKBVzVzIaaWDsf+oWPIUZlaW7DL++WWypVBCghmxXIT5dyuMGXE560Hj92st4AkXfuVdxGQ==}
+
+  '@unocss/extractor-arbitrary-variants@0.61.0':
+    resolution: {integrity: sha512-9ru/UR4kZ1+jGXpMawV9T8kpL54FrJBmWKMuFlDTEDIwtzDyyfLbt/buoXdzKDLmil9hOXH3IH8+dah/OiiDoA==}
+
+  '@unocss/preset-mini@0.61.0':
+    resolution: {integrity: sha512-P+DdMtPtzAQ2aQ1/WWPoO3X/qvky+Fqq4eKXIvbqXOQ9c2oem7/dnsPeT08zzLIqxVJnuykymPwRT85EumS0gg==}
+
+  '@unocss/preset-uno@0.61.0':
+    resolution: {integrity: sha512-mkKOra3dQEc3uI7aPIqa3t8MJXlmpLSgGaPfEJK52xkFe991ex6CiUunYMMWbh6ZSzmdxkO31IwQIH9lcmj/Uw==}
+
+  '@unocss/preset-wind@0.61.0':
+    resolution: {integrity: sha512-PooyLVAF4wH9KvW4OKfDxYFuM4qmnlU+Ci6O6RGgVsKyQMq76crRqqK76lbnehg7jOoZJVxmWfQ6k5gT3aQeXQ==}
+
+  '@unocss/rule-utils@0.61.0':
+    resolution: {integrity: sha512-MCdmfhE6Q9HSWjWqi2sx5/nnKyOEhfhoo+pVumHIqkHQICQ/LuKioFf7Y7e5ycqjFE/7dC2hKGZJ8WTMGIOMwA==}
+    engines: {node: '>=14'}
+
+  '@unocss/webpack@0.61.0':
+    resolution: {integrity: sha512-E5GtSN5qezWczHNG+zUaL3fUZSg247PoMRotfUySclpLhYHOXVFs7D/Sg6uebK75Eanc1gsltgh6KQ3APF3Drw==}
+    peerDependencies:
+      webpack: ^4 || ^5
 
   '@webassemblyjs/ast@1.12.1':
     resolution: {integrity: sha512-EKfMUOPRRUTy5UII4qJDGPpqfwjOmZ5jeGFwid9mnoqIFK+e0vqoi1qH56JpmZSzEL53jKnNzScdmftJyG5xWg==}
@@ -385,6 +435,9 @@ packages:
       supports-color:
         optional: true
 
+  defu@6.1.4:
+    resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
+
   dom-converter@0.2.0:
     resolution: {integrity: sha512-gd3ypIPfOMr9h5jIKq8E3sHOTCjeirnl0WK5ZdS1AW0Odt0b1PaWaHdJ4Qk4klv+YB9aJBS7mESXjFoDQPu6DA==}
 
@@ -456,6 +509,9 @@ packages:
   estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
+
+  estree-walker@2.0.2:
+    resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
   events@3.3.0:
     resolution: {integrity: sha512-mQw+2fkQbALzQ7V0MY0IqdnXNOeTtP4r0lN9z7AAawCXgqea7bDii20AYrIBrFd/Hx0M2Ocz6S111CaFkUcb0Q==}
@@ -691,6 +747,9 @@ packages:
 
   lower-case@2.0.2:
     resolution: {integrity: sha512-7fm3l3NAF9WfN6W3JOmf5drwpVqX78JtoGJ3A6W0a6ZnldM41w2fV5D490psKFTpMds8TJse/eHLFFsNHHjHgg==}
+
+  magic-string@0.30.10:
+    resolution: {integrity: sha512-iIRwTIf0QKV3UAnYK4PU8uiEc4SRh5jX0mwpIwETPpHdhVM4f53RSwS/vXvN1JhGX+Cs7B8qIq3d6AH49O5fAQ==}
 
   make-dir@2.1.0:
     resolution: {integrity: sha512-LS9X+dc8KLxXCb8dni79fLIIUA5VyZoyjSMCwTluaXA0o27cCK0bhXkpgw+sTXVpPy/lSO57ilRixqk0vDmtRA==}
@@ -1087,8 +1146,15 @@ packages:
   tslib@2.6.3:
     resolution: {integrity: sha512-xNvxJEOUiWPGhUuUdQgAJPKOOJfGnIyKySOc09XkKsgdUV/3E2zvwZYdejjmRgPCgcym1juLH3226yA7sEFJKQ==}
 
+  unconfig@0.3.13:
+    resolution: {integrity: sha512-N9Ph5NC4+sqtcOjPfHrRcHekBCadCXWTBzp2VYYbySOHW0PfD9XLCeXshTXjkPYwLrBr9AtSeU0CZmkYECJhng==}
+
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  unplugin@1.10.1:
+    resolution: {integrity: sha512-d6Mhq8RJeGA8UfKCu54Um4lFA0eSaRa3XxdAJg8tIdxbu1ubW0hBCZUL7yI2uGyYCRndvbK8FLHzqy2XKfeMsg==}
+    engines: {node: '>=14.0.0'}
 
   update-browserslist-db@1.0.16:
     resolution: {integrity: sha512-KVbTxlBYlckhF5wgfyZXTWnMn7MMZjMu9XG8bPlliUOP9ThaF4QnhP8qrjrH7DRzHfSk0oQv1wToW+iA5GajEQ==}
@@ -1134,6 +1200,9 @@ packages:
     resolution: {integrity: sha512-/DyMEOrDgLKKIG0fmvtz+4dUX/3Ghozwgm6iPp8KRhvn+eQf9+Q7GWxVNMk3+uCPWfdXYC4ExGBckIXdFEfH1w==}
     engines: {node: '>=10.13.0'}
 
+  webpack-virtual-modules@0.6.2:
+    resolution: {integrity: sha512-66/V2i5hQanC51vBQKPH4aI8NMAcBW59FVBs+rC7eGHupMyfn34q7rZIE+ETlJ+XTevqfUhVVBgSUNSW2flEUQ==}
+
   webpack@5.92.1:
     resolution: {integrity: sha512-JECQ7IwJb+7fgUFBlrJzbyu3GEuNBcdqr1LD7IbSzwkSmIevTm8PF+wej3Oxuz/JFBUZ6O1o43zsPkwm1C4TmA==}
     engines: {node: '>=10.13.0'}
@@ -1158,6 +1227,13 @@ packages:
 snapshots:
 
   '@adobe/css-tools@4.3.3': {}
+
+  '@ampproject/remapping@2.3.0':
+    dependencies:
+      '@jridgewell/gen-mapping': 0.3.5
+      '@jridgewell/trace-mapping': 0.3.25
+
+  '@antfu/utils@0.7.8': {}
 
   '@babel/code-frame@7.24.7':
     dependencies:
@@ -1209,6 +1285,12 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
+  '@rollup/pluginutils@5.1.0':
+    dependencies:
+      '@types/estree': 1.0.5
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+
   '@types/eslint-scope@3.7.7':
     dependencies:
       '@types/eslint': 8.56.10
@@ -1228,6 +1310,56 @@ snapshots:
   '@types/node@20.14.7':
     dependencies:
       undici-types: 5.26.5
+
+  '@unocss/config@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+      unconfig: 0.3.13
+
+  '@unocss/core@0.61.0': {}
+
+  '@unocss/extractor-arbitrary-variants@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+
+  '@unocss/preset-mini@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+      '@unocss/extractor-arbitrary-variants': 0.61.0
+      '@unocss/rule-utils': 0.61.0
+
+  '@unocss/preset-uno@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+      '@unocss/preset-mini': 0.61.0
+      '@unocss/preset-wind': 0.61.0
+      '@unocss/rule-utils': 0.61.0
+
+  '@unocss/preset-wind@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+      '@unocss/preset-mini': 0.61.0
+      '@unocss/rule-utils': 0.61.0
+
+  '@unocss/rule-utils@0.61.0':
+    dependencies:
+      '@unocss/core': 0.61.0
+      magic-string: 0.30.10
+
+  '@unocss/webpack@0.61.0(webpack@5.92.1(webpack-cli@5.1.4))':
+    dependencies:
+      '@ampproject/remapping': 2.3.0
+      '@rollup/pluginutils': 5.1.0
+      '@unocss/config': 0.61.0
+      '@unocss/core': 0.61.0
+      chokidar: 3.6.0
+      fast-glob: 3.3.2
+      magic-string: 0.30.10
+      unplugin: 1.10.1
+      webpack: 5.92.1(webpack-cli@5.1.4)
+      webpack-sources: 3.2.3
+    transitivePeerDependencies:
+      - rollup
 
   '@webassemblyjs/ast@1.12.1':
     dependencies:
@@ -1505,6 +1637,8 @@ snapshots:
     dependencies:
       ms: 2.1.2
 
+  defu@6.1.4: {}
+
   dom-converter@0.2.0:
     dependencies:
       utila: 0.4.0
@@ -1572,6 +1706,8 @@ snapshots:
   estraverse@4.3.0: {}
 
   estraverse@5.3.0: {}
+
+  estree-walker@2.0.2: {}
 
   events@3.3.0: {}
 
@@ -1783,6 +1919,10 @@ snapshots:
   lower-case@2.0.2:
     dependencies:
       tslib: 2.6.3
+
+  magic-string@0.30.10:
+    dependencies:
+      '@jridgewell/sourcemap-codec': 1.4.15
 
   make-dir@2.1.0:
     dependencies:
@@ -2128,7 +2268,20 @@ snapshots:
 
   tslib@2.6.3: {}
 
+  unconfig@0.3.13:
+    dependencies:
+      '@antfu/utils': 0.7.8
+      defu: 6.1.4
+      jiti: 1.21.6
+
   undici-types@5.26.5: {}
+
+  unplugin@1.10.1:
+    dependencies:
+      acorn: 8.12.0
+      chokidar: 3.6.0
+      webpack-sources: 3.2.3
+      webpack-virtual-modules: 0.6.2
 
   update-browserslist-db@1.0.16(browserslist@4.23.1):
     dependencies:
@@ -2173,6 +2326,8 @@ snapshots:
       wildcard: 2.0.1
 
   webpack-sources@3.2.3: {}
+
+  webpack-virtual-modules@0.6.2: {}
 
   webpack@5.92.1(webpack-cli@5.1.4):
     dependencies:
