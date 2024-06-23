@@ -1,0 +1,17 @@
+{
+  "name": "unocss-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@iconify-json/mdi": "^1.1.67",
+    "@unocss/cli": "^0.61.0",
+    "unocss": "^0.61.0"
+  }
+}
