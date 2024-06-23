@@ -1,0 +1,6 @@
+/* 对用户展示的网站 */
+@config "./tailwindcss.user.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

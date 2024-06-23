@@ -1,0 +1,6 @@
+,/* 对管理人员展示的网站 */
+@config "./tailwindcss.admin.config.js";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
