@@ -1,6 +1,8 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
+// 引入unocss
+import "virtual:uno.css";
 
 // 引入 arco-design 相关的依赖
 import ArcoVue from "@arco-design/web-vue";
