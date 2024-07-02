@@ -1,0 +1,20 @@
+{
+  "name": "state-management-collection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "typecheck:ci": "pnpm -r --parallel run typecheck",
+    "build:jotai": "rollup -c --package jotai",
+    "build:zustand": "rollup -c --package zustand",
+    "build:valtio": "rollup -c --package valtio",
+    "build:react-query": "rollup -c --package react-query",
+    "build": "concurrently 'pnpm:build:*'",
+    "test": "jest --passWithNoTests --config jest.config.ts"
+  },
+  "author": "",
+  "license": "ISC"
+}
