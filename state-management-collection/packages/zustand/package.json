@@ -20,5 +20,9 @@
         "default": "./dist/index.cjs"
       }
     }
+  },
+  "devDependencies": {
+    "@types/use-sync-external-store": "^0.0.6",
+    "zustand": "^4.5.0"
   }
 }
