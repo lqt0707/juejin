@@ -1,14 +1,18 @@
 {
   "name": "zustand",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A custom implementation of Zustand",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "scripts": {
+    "test": "jest --passWithNoTests --config jest.config.ts",
+    "build": "pnpm run -w build:zustand",
+    "prepublishOnly": "pnpm run build",
     "typecheck": "tsc"
   },
-  "keywords": [],
   "author": "",
-  "license": "ISC",
   "exports": {
     ".": {
       "import": {
@@ -21,6 +25,26 @@
       }
     }
   },
+  "keywords": [
+    "react",
+    "state",
+    "manager",
+    "management",
+    "zustand"
+  ],
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.7.0"
+  },
+  "contributors": [],
+  "bugs": {
+    "url": "https://github.com/q-u-n/state-management-collection/issues"
+  },
+  "homepage": "https://github.com/q-u-n/state-management-collection",
   "dependencies": {
     "use-sync-external-store": "^1.2.0"
   },
