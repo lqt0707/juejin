@@ -9,7 +9,10 @@
     "test": "jest --passWithNoTests --config jest.config.ts",
     "build": "pnpm run -w build:jotai",
     "prepublishOnly": "pnpm run build",
-    "typecheck": "tsc"
+    "typecheck": "tsc",
+    "benchmarks": "pnpm run '/^benchmark:.*/'",
+    "benchmark:read": "tsx benchmarks/simple-read.ts",
+    "benchmark:write": "tsx benchmarks/simple-write.ts"
   },
   "exports": {
     ".": {
@@ -40,11 +43,12 @@
   },
   "contributors": [],
   "bugs": {
-    "url": ""
+    "url": "https://github.com/q-u-n/state-management-collection/issues"
   },
-  "homepage": "",
-  "dependencies": {},
-  "devDependencies": {},
+  "homepage": "https://github.com/q-u-n/state-management-collection",
+  "devDependencies": {
+    "tsx": "^4.16.2"
+  },
   "peerDependencies": {
     "react": ">=17.0.0"
   }
