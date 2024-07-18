@@ -47,6 +47,7 @@
   },
   "homepage": "https://github.com/q-u-n/state-management-collection",
   "devDependencies": {
+    "benny": "^3.7.1",
     "tsx": "^4.16.2"
   },
   "peerDependencies": {
